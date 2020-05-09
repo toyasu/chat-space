@@ -20,8 +20,8 @@
 |------|----|-------|
 |body|text| |
 |image|string| |
-|group_id|integer|null: false|
-|user_id|integer|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -33,8 +33,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :masseges
