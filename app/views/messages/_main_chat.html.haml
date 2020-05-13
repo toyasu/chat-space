@@ -1,0 +1,26 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group{"data-group_id" => "29510"}
+        momotarou２
+      %ul.main-header__left-box__member-list
+        Member：
+        %li.main-header__left-box__member-list__member bird
+    = link_to "/groups/29510/edit" do
+      .main-header__edit-btn Edit
+  .messages
+    .message{"data-message_id" => "43054"}
+      .message__upper-info
+        %p.message__upper-info__talker bird
+        %p.message__upper-info__date 2020/05/10(Sun) 20:40:09
+      %p.message__text 黍団子は小さめで。
+  .form
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/29510/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "50OoAi6i2/lEu1e2vzcXymT8bXw2Cd5uod8XImYLdHPOAyORRNkTYEdWfQK3HX6EH9UbkhXbbVqACdQovTaH0w=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.input-box__image{:for => "message_image"}
+          %i.far.fa-image
+          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
