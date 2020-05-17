@@ -1,12 +1,15 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group{"data-group_id" => "29510"}
-        momotarou２
+      %h2.main-header__left-box__current-group
+        = @group.name
       %ul.main-header__left-box__member-list
         Member：
-        %li.main-header__left-box__member-list__member bird
-    = link_to "/groups/29510/edit" do
+        %li.main-header__left-box__member-list__member 
+        - @group.users.each do |user|
+          = user.name
+         
+    = link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
   .messages
     = render @messages
