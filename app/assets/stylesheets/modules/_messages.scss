@@ -113,6 +113,7 @@ margin-bottom: 40px;
   background-color: #fafafa;
   padding: 46px 40px;
   overflow: scroll;
+  display: block;
 }
 
 .message {
@@ -121,6 +122,8 @@ margin-bottom: 40px;
     color: #434a54;
     font-size: 16px;
     font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
   }
   &__upper-info__date {
     color: #999999;
